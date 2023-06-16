@@ -6,6 +6,10 @@ import { NavBar } from "../navBar/navBar";
 export default component$(() => {
   const routes = useStore([
     {
+      title: "home",
+      link: "/",
+    },
+    {
       title: "counter",
       link: "/examples/counter",
     },
