@@ -1,4 +1,5 @@
 import { component$ } from "@builder.io/qwik";
+import { Link } from "@builder.io/qwik-city";
 
 export interface NavBarProps {
   routes: {
@@ -13,7 +14,7 @@ export const NavBar = component$<NavBarProps>((props) => {
       {props.routes.map((route) => {
         return (
           <li key={route.link}>
-            <a href={route.link}>{route.title}</a>
+            <Link href={route.link}>{route.title}</Link>
           </li>
         );
       })}
