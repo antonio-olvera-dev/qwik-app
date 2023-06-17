@@ -13,6 +13,10 @@ export default component$(() => {
       title: "counter",
       link: "/examples/counter",
     },
+    {
+      title: "users",
+      link: "/examples/users",
+    },
   ]);
   return (
     <header class={styles.header}>
