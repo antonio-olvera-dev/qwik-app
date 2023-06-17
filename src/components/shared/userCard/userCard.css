@@ -1,7 +1,7 @@
-.user_random {
+.userCard {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: flex-start;
   gap: 20px;
 }
