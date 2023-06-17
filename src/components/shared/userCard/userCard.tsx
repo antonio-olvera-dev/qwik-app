@@ -14,7 +14,6 @@ export const UserCard = component$<{ user: { data: UserRandomI | undefined } }>(
           height={100}
         />
         {user.data?.results[0].name.first}
-        UserCard
       </div>
     );
   }
