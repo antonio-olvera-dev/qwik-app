@@ -1,13 +1,21 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import styles from "./user.css?inline";
-import { useLocation } from "@builder.io/qwik-city";
+import { routeLoader$ } from "@builder.io/qwik-city";
+
+export const userId = routeLoader$<number>(({ params, redirect }) => {
+  const id = Number(params.id);
+  if (isNaN(id) || id < 0 || id > 4) {
+    redirect(301, "/");
+  }
+  return id;
+});
 
 export default component$(() => {
   useStylesScoped$(styles);
-  const location = useLocation();
+  // const location = useLocation();
   return (
     <>
-      <h1>User {location.params.id}</h1>
+      <h1>User {userId()}</h1>
       <br />
     </>
   );

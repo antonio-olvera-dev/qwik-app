@@ -1,9 +1,4 @@
-import {
-  $,
-  ValueOrPromise,
-  component$,
-  useStylesScoped$,
-} from "@builder.io/qwik";
+import { $, component$, useStylesScoped$ } from "@builder.io/qwik";
 import styles from "./users.css?inline";
 import { PrimaryButton } from "~/components/shared/primaryButton/primaryButton";
 import { useNavigate } from "@builder.io/qwik-city";
@@ -17,8 +12,8 @@ export default component$(() => {
       <br />
       <div class="containerButtons">
         {[1, 2, 3, 4].map((it) => {
-          const navigateTo = $(() => {
-            nav(`/examples/users/${it}`);
+          const navigateTo = $(async () => {
+            await nav(`/examples/users/${it}`);
           });
           return (
             <>
