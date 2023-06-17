@@ -1,6 +1,6 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import styles from "./user.css?inline";
-import { routeLoader$ } from "@builder.io/qwik-city";
+import { Link, routeLoader$ } from "@builder.io/qwik-city";
 
 export const userId = routeLoader$<number>(({ params, redirect }) => {
   const id = Number(params.id);
@@ -14,9 +14,10 @@ export default component$(() => {
   useStylesScoped$(styles);
   // const location = useLocation();
   return (
-    <>
-      <h1>User {userId()}</h1>
+    <div class="user">
+      <span class="ml-6">User {userId()}</span>
       <br />
-    </>
+      <Link class="ml-6 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="/examples/users/">Return</Link>
+    </div>
   );
 });
