@@ -1,12 +1,21 @@
-import { $, type QwikChangeEvent, component$ } from "@builder.io/qwik";
+import {
+  $,
+  type QwikChangeEvent,
+  component$,
+  useContext,
+} from "@builder.io/qwik";
+import { ThemeContext, type ThemeContextI } from "~/contexts/ThemeContext";
 
 export interface ChangeThemeProps {
   text?: string;
 }
 
 export const ChangeTheme = component$<ChangeThemeProps>(({ text }) => {
+  const theme: ThemeContextI = useContext(ThemeContext);
+
   const changeTheme = $((ev: QwikChangeEvent<HTMLInputElement>) => {
     const color: string = ev.target.value;
+    theme.color = color;
     document.documentElement.style.setProperty("--qwik-dark-background", color);
   });
 
@@ -21,6 +30,7 @@ export const ChangeTheme = component$<ChangeThemeProps>(({ text }) => {
           <></>
         )}
         <input
+          value={theme.color}
           type="color"
           id="colorPicker"
           class="h-8 w-8"

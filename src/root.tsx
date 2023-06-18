@@ -1,8 +1,9 @@
-import { component$ } from '@builder.io/qwik';
+import { component$, useContextProvider, useStore } from '@builder.io/qwik';
 import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from '@builder.io/qwik-city';
 import { RouterHead } from './components/router-head/router-head';
 
 import './global.css';
+import { ThemeContext } from './contexts/ThemeContext';
 
 export default component$(() => {
   /**
@@ -11,6 +12,9 @@ export default component$(() => {
    *
    * Dont remove the `<head>` and `<body>` elements.
    */
+
+  const theme = useStore({color: "#151934"});
+  useContextProvider(ThemeContext, theme);
 
   return (
     <QwikCityProvider>
