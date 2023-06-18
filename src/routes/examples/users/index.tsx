@@ -1,7 +1,7 @@
 import { $, component$, useStylesScoped$ } from "@builder.io/qwik";
 import styles from "./users.css?inline";
 import { PrimaryButton } from "~/components/shared/primaryButton/primaryButton";
-import { DocumentHead, useNavigate } from "@builder.io/qwik-city";
+import { type DocumentHead, useNavigate } from "@builder.io/qwik-city";
 
 export default component$(() => {
   useStylesScoped$(styles);

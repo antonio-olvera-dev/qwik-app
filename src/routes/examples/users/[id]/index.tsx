@@ -1,6 +1,6 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import styles from "./user.css?inline";
-import { DocumentHead, Link, routeLoader$ } from "@builder.io/qwik-city";
+import { type DocumentHead, Link, routeLoader$ } from "@builder.io/qwik-city";
 
 export const userId = routeLoader$<number>(({ params, redirect }) => {
   const id = Number(params.id);

@@ -3,7 +3,7 @@ import styles from "./random_user.css?inline";
 import { PrimaryButton } from "~/components/shared/primaryButton/primaryButton";
 import { useTaskChangeUserRandom } from "~/composables/useChangeUserRandom";
 import { UserCard } from "~/components/shared/userCard/userCard";
-import { DocumentHead } from "@builder.io/qwik-city";
+import { type DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
   useStylesScoped$(styles);
