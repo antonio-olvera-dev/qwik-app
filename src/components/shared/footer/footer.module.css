@@ -1,3 +1,9 @@
 .span {
   font-size: 11px;
 }
+
+.df {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

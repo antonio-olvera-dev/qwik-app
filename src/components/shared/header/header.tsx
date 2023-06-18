@@ -2,6 +2,7 @@ import { component$, useStore } from "@builder.io/qwik";
 import { QwikLogo } from "../icons/qwik";
 import styles from "./header.module.css";
 import { NavBar } from "../navBar/navBar";
+import { ChangeTheme } from "../ChangeTheme/changeTheme";
 
 export default component$(() => {
   const routes = useStore([
@@ -35,6 +36,7 @@ export default component$(() => {
           </a>
         </div>
         <NavBar routes={routes}></NavBar>
+        <ChangeTheme />
       </div>
     </header>
   );
