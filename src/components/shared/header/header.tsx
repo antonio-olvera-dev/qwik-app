@@ -21,6 +21,10 @@ export default component$(() => {
       title: "random user",
       link: "/examples/random_user",
     },
+    {
+      title: "random user task",
+      link: "/examples/random_user_task",
+    },
   ]);
   return (
     <header class={styles.header}>

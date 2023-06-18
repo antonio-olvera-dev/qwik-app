@@ -1,7 +1,7 @@
 import { $, component$, useStylesScoped$ } from "@builder.io/qwik";
 import styles from "./users.css?inline";
 import { PrimaryButton } from "~/components/shared/primaryButton/primaryButton";
-import { useNavigate } from "@builder.io/qwik-city";
+import { DocumentHead, useNavigate } from "@builder.io/qwik-city";
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -25,3 +25,13 @@ export default component$(() => {
     </div>
   );
 });
+
+export const head: DocumentHead = {
+  title: "User",
+  meta: [
+    {
+      name: "description",
+      content: "User description",
+    },
+  ],
+};
